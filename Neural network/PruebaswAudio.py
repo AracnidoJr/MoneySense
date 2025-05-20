@@ -19,9 +19,10 @@ import matplotlib.pyplot as plt
 import pygame
 
 # ———————————— EDITA ESTAS RUTAS ————————————
-MODEL_PATH = r'modelo_billetes_optimized.keras'
-TEST_IMAGE = r'C:/Users/ivanv/OneDrive/Documents/ITAM/Procesamiento Digital de Senales/Proyecto/Imagenes de Prueba/500.png'
-AUDIO_DIR  = r'C:/Users/ivanv/OneDrive/Documents/ITAM/Procesamiento Digital de Senales/Proyecto/AudiosBilletes'
+MODEL_PATH  = 'modelo_billetes_optimized.keras'
+TEST_IMAGE  = r'../Imagenes de Prueba/100tard.png'
+TEST_DIR    = r'../Imagenes de Prueba'
+AUDIO_DIR  = r'../AudiosBilletes'
 # ————————————————————————————————————————————
 
 CLASS_LABELS = {
@@ -84,8 +85,13 @@ def main():
 
     print("\n=== Predicción ===")
     results = predict_and_speak(model, TEST_IMAGE, top_k=3, threshold=0.40, show_img=True)
+    aud_label = ""
     for label, prob in results:
         print(f"{label}: {prob*100:.1f}%")
+        if (prob * 100) > 60:
+            aud_label = r'{label}.mp3'
+    while True:
+        play_audio("aud_label")
 
 if __name__ == "__main__":
     main()

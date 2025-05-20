@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 
 # —————————————— EDITA ESTAS RUTAS ——————————————
 MODEL_PATH  = 'modelo_billetes_optimized.keras'
-TEST_IMAGE  = r'C:/Users/ivanv/OneDrive/Documents/ITAM/Procesamiento Digital de Senales/Proyecto/Imagenes de Prueba/100tard.png'
-TEST_DIR    = r'C:/Users/ivanv/OneDrive/Documents/ITAM/Procesamiento Digital de Senales/Proyecto/Imagenes de Prueba'
+TEST_IMAGE  = r'../Imagenes de Prueba/20_3.png'
+TEST_DIR    = r'../Imagenes de Prueba'
 # ——————————————————————————————————————————————
 
 # Mapeo de clases (debe coincidir con tu entrenamiento)
